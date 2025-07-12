@@ -64,7 +64,7 @@
 
 ---
 
-## 🧠 Algorithm
+## Algorithm
 
 <details>
 <summary><strong>1. Search Algorithms</strong></summary>
