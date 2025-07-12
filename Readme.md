@@ -1,8 +1,6 @@
 # Data Structures & Algorithms Overview
 
----
-
-## Data Structure
+### [1] Data Structure
 
 <details>
 <summary><strong>1. Array</strong></summary>
@@ -64,7 +62,7 @@
 
 ---
 
-## Algorithm
+### [2] Algorithm
 
 <details>
 <summary><strong>1. Search Algorithms</strong></summary>
@@ -116,4 +114,11 @@
 
 </details>
 
----
+----
+# Stack Data Stracture in C
+
+- Stack কি ?
+- Stack কেন লাগে?
+- Stack কোডি করতে কি কি লাগবে?
+- **Push()**, **pop()** & **peek()** কি?
+
