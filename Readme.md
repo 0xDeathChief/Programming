@@ -217,7 +217,7 @@ int main()
 
 <br>
 
-### Stack Setup
+### [1] Stack Setup
 
 ```c
 #define MAX 3
@@ -232,7 +232,7 @@ int top = -1;   // Index of the top element (starts empty)
 <br>
 <br>
 
-### push() -> Add Element to stack
+### [2] push() -> Add Element to stack
 
 ```c
 void push(int x)
@@ -254,7 +254,7 @@ void push(int x)
 <br>
 <br>
 
-### pop() -> Remove element from stack
+### [3] pop() -> Remove element from stack
 
 ```c
 int pop()
@@ -280,7 +280,7 @@ int pop()
 <br>
 <br>
 
-### peek() -> See the top value (without removing)
+### [4] peek() -> See the top value (without removing)
 
 ```c
 int peek()
@@ -303,7 +303,7 @@ int peek()
 <br>
 <br>
 
-### Main() -> Testing all functions
+### [5] Main() -> Testing all functions
 
 ```c
 int main() {
@@ -322,11 +322,9 @@ int main() {
 }
 ```
 
-<br>
-<br>
-<br>
+---
 
-If we use `int stack[3];`. What issue will be happend?
+## [1] If we use `int stack[3];`. What issue will be happend?
 
 - What This means:
     - `stack[3]` -> Creates an array that can hold 3 items.
@@ -340,7 +338,7 @@ If we use `int stack[3];`. What issue will be happend?
 <br>
 <br>
 
-### Stack Overflow
+### [2] Stack Overflow
 
 if you try to push more then 3 elements:
 
@@ -364,7 +362,7 @@ if(top == 2)
 <br>
 <br>
 
-### Stack Underflow
+### [4] Stack Underflow
 
 - if you pop when the stack is empty (i.e., top == -1):
 
@@ -388,7 +386,7 @@ if (top == -1)
 <br>
 <br>
 
-### Accessing uninitialized memory
+### [5] Accessing uninitialized memory
 
 - If you print or `stack[top]` without pushing any data first:
 
