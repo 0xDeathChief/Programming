@@ -1,74 +1,118 @@
-# Data Structure
-1.  Array  
-    1. insert data
-    2. delete data
-    3. sorting data
-    4. change array data
-
-<br>
-
-2. Linked List
-    1. SINGLY
-    2. DOUBLY
-    3. CIRCULAR
-
-<br>
-
-3. STACK -> [LIFO => `Last In First Out`]
-
-<br>
-
-4. QUEUE -> [FIFO => `First In First Out`]
-    1. Object Add [ENQUEUE]
-    2. Object Out [DEQUEUE]
-    3. Priority QUEUE
-
-<br>
-
-5. Hash Table | Dictionary
-    1. Hashing Search
-
-<br>
-
-6. Tree 
-    1. Binary Search tree
-
-<br>
-
-7. Graph
+# Data Structures & Algorithms Overview
 
 ---
-# Algorithm 
 
-1. Search Algorithm 
-    1. Linear Search
-    2. Binary Search
+## Data Structure
 
-<br>
+<details>
+<summary><strong>1. Array</strong></summary>
 
-2. Sorting Algorithm
-    1. Buble Sort
-    2. Selection Sort
-    3. Insertion Sort
-    4. Merge Sort
-    5. Quick Sort
+- Insert data  
+- Delete data  
+- Sorting data  
+- Change array data  
 
-<br>
+</details>
 
-3. Time Complexity
-    1. Big O Notation
-    2. Space Complexity
+<details>
+<summary><strong>2. Linked List</strong></summary>
 
-<br>
+- Singly  
+- Doubly  
+- Circular  
 
-4. Divide and Conquer
-5. Dynamic Programming
+</details>
 
-<br>
+<details>
+<summary><strong>3. Stack</strong></summary>
 
-6. Tree
-    1. BFS & DFS
+- LIFO → <code>Last In First Out</code>  
 
-<br>
+</details>
 
-7. Graph => Bellman FORD Algorithm
+<details>
+<summary><strong>4. Queue</strong></summary>
+
+- FIFO → <code>First In First Out</code>  
+- Enqueue → Add Object  
+- Dequeue → Remove Object  
+- Priority Queue  
+
+</details>
+
+<details>
+<summary><strong>5. Hash Table / Dictionary</strong></summary>
+
+- Hashing Search  
+
+</details>
+
+<details>
+<summary><strong>6. Tree</strong></summary>
+
+- Binary Search Tree  
+
+</details>
+
+<details>
+<summary><strong>7. Graph</strong></summary>
+
+- Representation  
+- Traversal  
+
+</details>
+
+---
+
+## 🧠 Algorithm
+
+<details>
+<summary><strong>1. Search Algorithms</strong></summary>
+
+- Linear Search  
+- Binary Search  
+
+</details>
+
+<details>
+<summary><strong>2. Sorting Algorithms</strong></summary>
+
+- Bubble Sort  
+- Selection Sort  
+- Insertion Sort  
+- Merge Sort  
+- Quick Sort  
+
+</details>
+
+<details>
+<summary><strong>3. Complexity</strong></summary>
+
+- Big O Notation  
+- Space Complexity  
+
+</details>
+
+<details>
+<summary><strong>4. Divide & Conquer</strong></summary>
+</details>
+
+<details>
+<summary><strong>5. Dynamic Programming</strong></summary>
+</details>
+
+<details>
+<summary><strong>6. Tree Algorithms</strong></summary>
+
+- BFS (Breadth-First Search)  
+- DFS (Depth-First Search)  
+
+</details>
+
+<details>
+<summary><strong>7. Graph Algorithms</strong></summary>
+
+- Bellman-Ford Algorithm  
+
+</details>
+
