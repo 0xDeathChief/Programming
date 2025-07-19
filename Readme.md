@@ -246,3 +246,91 @@ return 0;
 ### **নিজে করোঃ রিভার্স ট্রার্ভাসিং করো।**
 
 ---
+
+## ডায়নামিক ট্রার্ভাসিং
+
+- এইখানে আমরা সব কিছু ইউজার থেকে ইনপুট নিয়ে করবাে।
+
+```c
+#include<stdio.h>
+
+int main()
+{
+    int i,k;
+
+    printf("Enter the array size:");
+    scanf("%d",&i);
+
+    int arr[i];
+
+    printf("\n\nEnter the array Element:");
+
+    for(int j=0; j < i; j++)
+    {
+        scanf("%d",&arr[j]);
+    }
+
+    printf("\n\n");
+
+    for(int j=0; j < i; j++)
+    {
+        printf("arr[%d]=%d\n",j,arr[j]);
+    }
+
+    return 0;
+}
+```
+
+<br>
+
+ব্যাখ্যাঃ 
+
+<details><summary><strong>#include<stdio.h></strong></summary><br>
+
+- ইনপুট-আউটপুটের জন্য `stdio.h` লাইব্রেরি যুক্ত করা হয়েছে।
+
+<br>
+
+</details>
+
+<details><summary><strong>int i, k;</strong></summary><br>
+
+- `i` হবে অ্যারের সাইজ, `k` আপাতত ব্যবহার হয়নি (মুছে ফেললেও চলে)।
+
+<br>
+
+</details>
+
+<details><summary><strong>scanf("%d", &i);</strong></summary><br>
+
+- ইউজার কতগুলো সংখ্যা ইনপুট দেবে, সেটা নিচ্ছো।
+
+<br>
+
+</details>
+
+<details><summary><strong>int arr[i];</strong></summary><br>
+
+- এখানে C99 এর ফিচার ব্যবহার করে Variable Length Array (VLA) বানানো হয়েছে।
+
+<br>
+
+</details>
+
+<details><summary><strong>for (int j = 0; j < i; j++) { scanf("%d", &arr[j]); }</strong></summary><br>
+
+- ইউজার যত সংখ্যক ইনপুট দেবে, প্রতিটা `arr[j]` তে সেভ হচ্ছে।
+
+<br>
+
+</details>
+
+<details><summary><strong>for (int j = 0; j < i; j++) { printf("arr[%d]=%d\n", j, arr[j]); }</strong></summary><br>
+
+- অ্যারে থেকে সব ভ্যালু ইনডেক্স সহ প্রিন্ট হচ্ছে।
+
+<br>
+
+</detail>
+
+### **নিজে করোঃ রিভার্স ডায়নামিক ট্রার্ভাসিং করো।**
