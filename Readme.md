@@ -115,285 +115,131 @@
 </details>
 
 ----
-# Stack Data Stracture in C
 
-- Stack কি ?
-- Stack কেন লাগে?
-- Stack কোডি করতে কি কি লাগবে?
-- **Push()**, **pop()** & **peek()** কি?
+# ডাটা স্ট্রাকচার ২ ধরনের হয়ে থাকেঃ
 
-<br>
-
-- Push() => মানে একটা আইটেম যোগ করা।
-- Pop() => মানে একটা আইটেম বিয়োগ করা।
-- peek() => স্টেক এর উপরের মান রির্টান করে।
+1. primitive Data Structure 
+    - Interger
+    - Float
+    - Character
+    - Pointer
 
 <br>
 
-<details>
-<summary><strong>Stack এর কোড কিভাবে করব।<strong></summary>
+2. Non Primitive Data Structure
+    - linear List
+        - Array
+        - Link List
+        - Stack
+        - Queue
     
-- একটা Array বা List নিবো, যেটাকে আমরা stack হিসেবে চিন্তা করব।
-
-</details>
-
-<br>
-
-<details>
-<summary><strong>Stack Rule: Last in first Out (LIFO).</strong></summary>
-
-- push(item): put items on top of the stack
-- pop(): Remove one item from top of the stack
-- peek(): Returns the value of top item in the stack
-
-</details>
+    - Non-Linear List
+        - Graph
+        - Trees
 
 <br>
 
-### Let's See Example with Code:
+--- 
+
+## ডাটা স্ট্রাকচার এর অ্যারেতে সাধারনত ৬ ধরনের অপারেশন হয়ে থাকে।
+
+1. Traversing
+2. Searching
+3. Inserting
+4. Deleting
+5. Sorting
+6. Merging
+
+<br>
+
+**=>** Traversing: মানে হচ্ছে ভ্রমন করা। যেমন আমার ক্লাসে ৪০ টি চেয়ার আছে, আমি প্রত্যেকটি চেয়ার ঘুরে ঘুরে দেখলাম এইটাকে আমরা ট্রাভারসিং (Traversing) বলতে পারি। এখন এইটা আমরা কিভাবে কোডে প্রয়োগ করতে পারি।
+
+- **Static type in travarsing.**
 
 ```c
 #include<stdio.h>
-#define capacity 3
-
-int stack[capacity];
-int top = -1;
-
-void push(int x)
-{
-    if(top < capacity - 1)
-    {
-        top = top + 1;
-        stack[top] = x;
-        printf("Successfully added item: %d\n",x);
-    }
-
-    else
-        printf("\nException! No Spaces\n");
-}
-
-int pop()
-{
-    if(top >= 0)
-    {
-        int val = stack[top];
-        top = top - 1;
-        return val;
-    }
-
-    printf("Exception from pop! Empty Stack\n");
-    return -1;
-}
-
-
-int peek()
-{
-    if(top >= 0)
-    {
-        return stack[top];
-    }
-    printf("Exception from peek! Empty Stack\n");
-    return -1;
-}
-
 int main()
 {
-    printf("Implementing my stack in C.\n");
-    //peek();
-    push(10);
-    push(20);
-    push(40);
-    //printf("pop item: %d.\n",pop());
-    push(21);
-    //printf("Top of Stack %d\n",peek());
+    int arr[5]={1,2,3,4,5};
+
+    for(int i = 0; i < 5; i++)
+        printf("arr [%d] = %d\n",i, arr[i]);
+
+
     return 0;
 }
 ```
 
-<br>
+ব্যাখ্যাঃ 
 
-<details>
-<summary>Explanation:</summary>
+<details><summary><strong>#include<stdio.h></strong></summary><br>
 
-<br>
-
-### [1] Stack Setup
-
-```c
-#define MAX 3
-int stack[MAX]; // Array to hold stack elements
-int top = -1;   // Index of the top element (starts empty)
-```
-
-- `MAX`: The size of the stack.
-- `stack[]`: Where we store our data.
-- `top`: Tells us the position of the current top. Starts at -1 (empty stack).
+- এটি একটি header file
+- `stdio.h` মানে Standard Input Output Header
+- এখানে printf() ফাংশনটি ব্যবহারের জন্য এই লাইব্রেরি দরকার হয়।
 
 <br>
-<br>
-
-### [2] push() -> Add Element to stack
-
-```c
-void push(int x)
-{
-    if(top == Max - 1)
-    printf("Stack Overflow.\n");
-
-    else{
-        top = top + 1; // top++
-        stack[top] = x;
-        printf("%d pushed to stack.\n",x);
-    }
-}
-```
-
-- Check if the stack is full.
-- If not full, moves `top` up and stroes `value` there.
-
-<br>
-<br>
-
-### [3] pop() -> Remove element from stack
-
-```c
-int pop()
-{
-    if(top == -1)
-    {
-        printf("Stack overflow\n");
-        return -1;
-    }
-
-    else{
-        int val = stack[top];
-        top = top - 1; // top --
-        printf("%d popped from stack\n",val);
-        return val;
-    }
-}
-```
-
-- Checks if the stack is empty.
-- If not, gets the top value, decreases `top`, and returns the value.
-
-<br>
-<br>
-
-### [4] peek() -> See the top value (without removing)
-
-```c
-int peek()
-{
-    if(top == -1)
-    {
-        printf("Stack is empty.\n");
-        return -1;
-    }
-
-    else{
-        return stack[top];
-    }
-}
-```
-
-- Shows the top value of the stack but does not remove it.
-
-
-<br>
-<br>
-
-### [5] Main() -> Testing all functions
-
-```c
-int main() {
-    push(10);
-    push(20);
-    push(30);
-    
-    printf("Top element is %d\n", peek()); // Should be 30
-    
-    pop(); // Removes 30
-    pop(); // Removes 20
-    
-    printf("Top element is %d\n", peek()); // Should be 10
-    
-    return 0;
-}
-```
-
----
-
-## [1] If we use `int stack[3];`. What issue will be happend?
-
-- What This means:
-    - `stack[3]` -> Creates an array that can hold 3 items.
-    - `top = -1` -> Tell us the stack is currently empty.
-
-<br>
-
-- **What Issues Might Happen Late**
-    - If you don't write `push()` & `pop()` functions properly, you might face these issues:
-
-<br>
-<br>
-
-### [2] Stack Overflow
-
-if you try to push more then 3 elements:
-
-```c
-push(4); // if top >= 9, stack[10] will overflow (array out of bounds)
-```
-
-- **Problem:** Writing to memory beyond the array (undefined behavior).
-
-<br>
-
-**solution:** Check this in your push function:
-
-```c
-if(top == 2)
-{
-    printf("Stack Overflow.\n");
-}
-```
-
-<br>
-<br>
-
-### [4] Stack Underflow
-
-- if you pop when the stack is empty (i.e., top == -1):
-
-```c
-pop(); // nothing to pop
-```
-
-- **Problem:** Reading from invalid memory.
-
-<br>
-
-- **Solution:** Add a Check
-
-```c
-if (top == -1)
-{
-    printf("Stack Underflow.\n");
-}
-```
-
-<br>
-<br>
-
-### [5] Accessing uninitialized memory
-
-- If you print or `stack[top]` without pushing any data first:
-
-```c
-printf("%d",stack[top]); // top = -1 -> invalid
-```
-
-- **Problem:** You are reading from a wrong memory index.
 
 </details>
+
+<details><summary><strong>int main()</strong></summary><br>
+
+- প্রতিটি C প্রোগ্রামের প্রধান ফাংশন হলো main()।
+- প্রোগ্রাম এখান থেকেই শুরু হয়।
+
+<br>
+
+</details>
+
+<details><summary><strong>int arr[5] = {1, 2, 3, 4, 5};</strong></summary><br>
+
+- এখানে একটি পুরো সংখ্যা টাইপের অ্যারে ডিক্লিয়ার করা হয়েছে যার সাইজ ৫।
+- অ্যারেটিতে শুরুতেই মান দেওয়া হয়েছে: ১, ২, ৩, ৪, ৫
+- অ্যারেটির ইনডেক্স ০ থেকে ৪ পর্যন্ত যাবে:
+
+```c
+arr[0] = 1
+arr[1] = 2
+arr[2] = 3
+arr[3] = 4
+arr[4] = 5
+```
+
+<br>
+
+</details>
+
+<details><summary><strong>for (int i = 0; i < 5; i++)</strong></summary><br>
+
+- এটি একটি for loop, যেখানে:
+    - `int i = 0;` → লুপ শুরু হচ্ছে ০ থেকে
+    - `i < 5;` → যতক্ষণ i পাঁচের চেয়ে ছোট, লুপ চলবে
+    - `i++` → প্রতিবার লুপ চলার পর i এক করে বাড়বে
+
+<br>
+
+</details>
+
+<details><summary><strong>printf("arr [%d] = %d\n", i, arr[i]);</strong></summary><br>
+
+- এটি printf() ফাংশন, যা স্ক্রিনে তথ্য দেখায়।
+- এখানে i মানে ইনডেক্স এবং arr[i] মানে সেই ইনডেক্সে থাকা মান।
+- উদাহরণস্বরূপ, প্রথমবার:
+
+```c
+arr [0] = 1
+```
+
+```c
+return 0;
+```
+
+- main() ফাংশনের শেষে return 0; মানে হচ্ছে প্রোগ্রাম সফলভাবে শেষ হয়েছে।
+
+<br>
+
+</details>
+
+### **নিজে করোঃ রিভার্স ট্রার্ভাসিং করো।**
+
+---
